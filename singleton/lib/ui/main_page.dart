@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:singleton/singleton/singleton.dart';
+import 'package:singleton/widget/custombutton.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -36,37 +37,15 @@ class _MainPageState extends State<MainPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
+            CustomButton(
               onPressed: onResetTitle,
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                ),
-                backgroundColor: MaterialStateProperty.all(Colors.red),
-              ),
-              child: const Text(
-                '    Init Title    ',
-                style: TextStyle(color: Colors.white),
-              ),
+              content: '   Reset title   ',
             ),
-            ElevatedButton(
+            CustomButton(
               onPressed: onChangeTitle,
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    side: const BorderSide(color: Colors.red, width: 0.7),
-                  ),
-                ),
-                backgroundColor: MaterialStateProperty.all(Colors.white),
-              ),
-              child: const Text(
-                'ChangeTitle',
-                style: TextStyle(color: Colors.red),
-              ),
-            ),
+              content: 'Changed title',
+              backgroundColor: Colors.red,
+            )
           ],
         ),
       ),
